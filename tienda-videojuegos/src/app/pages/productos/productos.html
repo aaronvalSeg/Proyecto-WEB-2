@@ -1,0 +1,94 @@
+<!--- ENCABEZADO --->
+<section class="portada py-5">
+    <div class="container py-3 text-center">
+        <span class="badge etiqueta mb-3">Catálogo</span>
+        <h1 class="display-5 fw-bold">Nuestros Videojuegos</h1>
+        <p class="lead text-muted mx-auto">
+            Explorá nuestros juegos físicos originales para Xbox, PlayStation y Nintendo.
+        </p>
+
+        <!-- PANEL DE FILTROS POR CONSOLA -->
+        <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+            <button type="button"
+             class="btn btn-filtro btn-filtro-todas"
+             [class.active]="filtroConsola === 'Todas'"
+                (click)="seleccionarFiltro('Todas')">
+                🎮 Todas
+            </button>
+
+            <button type="button" 
+             class="btn btn-filtro btn-filtro-xbox"
+             [class.active]="filtroConsola === 'Xbox'"
+                (click)="seleccionarFiltro('Xbox')">
+                💚 Xbox (One / Series X|S)
+            </button>
+
+            <button type="button"
+             class="btn btn-filtro btn-filtro-playstation" 
+             [class.active]="filtroConsola === 'PlayStation'"
+                (click)="seleccionarFiltro('PlayStation')">
+                💙 PlayStation (PS4 / PS5 )
+            </button>
+
+            <button type="button"
+             class="btn btn-filtro btn-filtro-nintendo" 
+             [class.active]="filtroConsola === 'Nintendo'"
+                (click)="seleccionarFiltro('Nintendo')">
+                ❤️ Nintendo (Switch)
+            </button>
+        </div>
+    </div>
+</section>
+
+<!--- LISTADO DE PRODUCTOS --->
+<section class="py-5">
+    <div class="container">
+        @if (productosFiltrados.length > 0) {
+        <div class="row g-4">
+            @for (producto of productosFiltrados; track producto.id) {
+            <div class="col-12 col-md-6 col-lg-4">
+                <app-producto-card 
+                [producto]="producto" 
+                (favorito)="agregarAFavoritos($event)">
+                </app-producto-card>
+            </div>
+            }
+        </div>
+        } @else {
+            <div class="text-center py-5">
+                <p class="fs-4 text-muted">No hay productos disponibles por el momento para esta consola.</p>
+                @if (mensajeFavorito) {
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ mensajeFavorito }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+                <button class="btn btn-outline-secondary mt-2"
+                (click)="seleccionarFiltro('Todas')">
+                Ver todas las consolas
+            </button>
+            </div>
+        }
+    </div>
+</section>
+
+@if (mensajeFavorito) {
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+        <div class="toast show alert-favorito p-3 shadow-lg" role="alert">
+            <div class="d-flex flex-column gap-2">
+                <div class="d-flex aling-items-center">
+                    <span class="fs-5 me-2">♥</span>
+                    <strong>{{ mensajeFavorito }}</strong>
+                </div>
+                <div class="text-end">
+                    <button
+                    type="button"
+                    class="btn btn-sm btn-favorito px-3"
+                    (click)="mensajeFavorito = null">
+                    Aceptar
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

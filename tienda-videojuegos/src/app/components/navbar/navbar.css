@@ -1,0 +1,45 @@
+:host {
+  --violeta: #7c3aed;
+  --violeta-claro: #ede9fe;
+  --violeta-oscuro: #5b21b6;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.marca-icono {
+  background: linear-gradient(135deg, var(--violeta), #a78bfa);
+  color: #fff;
+  padding: 0.25rem 0.65rem;
+  border-radius: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.marca-texto {
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.enlace {
+  color: #374151;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.9rem !important;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.enlace:hover {
+  background-color: var(--violeta-claro);
+  color: var(--violeta-oscuro);
+}
+
+.enlace.active {
+  background-color: var(--violeta-claro);
+  color: var(--violeta);
+  font-weight: 600;
+}

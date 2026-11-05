@@ -1,0 +1,29 @@
+:host {
+  --violeta: #7c3aed;
+  --violeta-claro: #ede9fe;
+  --violeta-oscuro: #5b21b6;
+}
+
+.portada {
+  background: linear-gradient(180deg, var(--violeta-claro), #ffffff);
+}
+
+.etiqueta {
+  background-color: var(--violeta);
+  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+}
+
+.fondo-suave {
+  background-color: #f9fafb;
+}
+
+.tarjeta {
+  border-radius: 1rem;
+  border-top: 5px solid var(--violeta) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.valor {
+  color: var(--violeta-oscuro);
+}

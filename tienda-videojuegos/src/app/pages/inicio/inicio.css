@@ -1,0 +1,196 @@
+:host {
+  --violeta: #7c3aed;
+  --violeta-claro: #ede9fe;
+  --violeta-oscuro: #5b21b6;
+}
+
+/* Portada */
+.hero {
+  background:
+    radial-gradient(circle at 15% 20%, var(--violeta-claro), transparent 45%),
+    radial-gradient(circle at 85% 85%, #ddd6fe, transparent 45%),
+    #ffffff;
+}
+
+.etiqueta {
+  background-color: var(--violeta);
+  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+}
+
+.resaltado {
+  background: linear-gradient(135deg, var(--violeta), #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.boton {
+  background-color: var(--violeta);
+  color: #fff;
+  border: none;
+}
+
+.boton:hover {
+  background-color: var(--violeta-oscuro);
+  color: #fff;
+}
+
+.boton-borde {
+  border: 2px solid var(--violeta);
+  color: var(--violeta);
+  background-color: transparent;
+}
+
+.boton-borde:hover {
+  background-color: var(--violeta-claro);
+  color: var(--violeta-oscuro);
+  border-color: var(--violeta-oscuro);
+}
+
+/* Disco decorativo */
+.disco {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #a78bfa, #7c3aed, #ede9fe, #c4b5fd, #5b21b6, #ddd6fe, #a78bfa
+  );
+  box-shadow: 0 20px 50px rgba(124, 58, 237, 0.35);
+  animation: girar 14s linear infinite;
+}
+
+.disco-centro {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 14px rgba(255, 255, 255, 0.35);
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Franja de datos */
+.franja {
+  background: linear-gradient(135deg, var(--violeta), var(--violeta-oscuro));
+  color: #fff;
+}
+
+.numero {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Fondo suave */
+.fondo-suave {
+  background-color: #f9fafb;
+}
+
+/* Cards de consolas */
+.consola {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.consola:hover {
+  transform: translateY(-6px);
+}
+
+.consola-xbox:hover {
+  box-shadow: 0 12px 28px rgba(59, 122, 39, 0.4);
+}
+
+.consola-nintendo:hover {
+  box-shadow: 0 12px 28px rgba(228, 0, 15, 0.4);
+}
+
+.consola-playstation:hover {
+  box-shadow: 0 12px 28px rgba(21, 84, 224, 0.4);
+}
+
+.banner {
+  height: 170px;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: scale 0.4s;
+}
+
+.consola:hover .banner img {
+  scale: 1.08;
+}
+
+.banner .img-xbox {
+  scale: 1.7;
+}
+
+.consola:hover .banner .img-xbox {
+  scale: 1.85;
+}
+
+.btn-xbox,
+.btn-nintendo,
+.btn-playstation {
+  transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-xbox:hover {
+  background-color: #3b7a27;
+  border-color: #3b7a27;
+  color: #fff;
+  box-shadow: 0 0 14px rgba(59, 122, 39, 0.6);
+}
+
+.btn-nintendo:hover {
+  background-color: #e4000f;
+  border-color: #e4000f;
+  color: #fff;
+  box-shadow: 0 0 14px rgba(228, 0, 15, 0.6);
+}
+
+.btn-playstation:hover {
+  background-color: #1554e0;
+  border-color: #1554e0;
+  color: #fff;
+  box-shadow: 0 0 14px rgba(21, 84, 224, 0.6);
+}
+
+/* Pasos */
+.paso {
+  border-radius: 1rem;
+  border-top: 5px solid var(--violeta) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.paso-numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--violeta-claro);
+  color: var(--violeta-oscuro);
+  font-weight: 700;
+}
+
+/* Llamado final */
+.llamado {
+  background: linear-gradient(135deg, var(--violeta), #a78bfa);
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.3);
+}

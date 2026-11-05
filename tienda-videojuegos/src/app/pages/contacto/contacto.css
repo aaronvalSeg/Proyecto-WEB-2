@@ -1,0 +1,37 @@
+:host {
+  --violeta: #7c3aed;
+  --violeta-claro: #ede9fe;
+  --violeta-oscuro: #5b21b6;
+}
+
+.portada {
+  background: linear-gradient(180deg, var(--violeta-claro), #ffffff);
+}
+
+.etiqueta {
+  background-color: var(--violeta);
+  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+}
+
+.tarjeta {
+  border-radius: 1rem;
+  border-top: 5px solid var(--violeta) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.boton {
+  background-color: var(--violeta);
+  color: #fff;
+  border: none;
+}
+
+.boton:hover:not(:disabled) {
+  background-color: var(--violeta-oscuro);
+  color: #fff;
+}
+
+.form-control:focus {
+  border-color: var(--violeta);
+  box-shadow: 0 0 0 0.2rem rgba(124, 58, 237, 0.2);
+}

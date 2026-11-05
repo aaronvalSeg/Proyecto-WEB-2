@@ -1,0 +1,29 @@
+:host {
+  --violeta: #7c3aed;
+  --violeta-claro: #ede9fe;
+  --violeta-oscuro: #5b21b6;
+}
+
+.portada {
+  background: linear-gradient(180deg, var(--violeta-claro), #ffffff);
+}
+
+.codigo {
+  font-size: 7rem;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--violeta), #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.boton {
+  background-color: var(--violeta);
+  color: #fff;
+  border: none;
+}
+
+.boton:hover {
+  background-color: var(--violeta-oscuro);
+  color: #fff;
+}

@@ -1,0 +1,50 @@
+<section class="portada py-5">
+  <div class="container py-4 text-center">
+    <span class="badge etiqueta mb-3">Contacto</span>
+    <h1 class="display-5 fw-bold">Hablemos</h1>
+    <p class="lead text-muted mx-auto">
+      ¿Buscás un juego en particular? Escribinos y te respondemos.
+    </p>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+
+        @if (enviado) {
+          <div class="card border-0 tarjeta text-center">
+            <div class="card-body p-5">
+              <h3 class="fw-bold mb-3">¡Gracias, {{ nombre }}!</h3>
+              <p class="text-muted">Recibimos tu mensaje y te vamos a responder pronto.</p>
+              <button class="btn boton" (click)="nuevoMensaje()">Enviar otro mensaje</button>
+            </div>
+          </div>
+        } @else {
+          <div class="card border-0 tarjeta">
+            <div class="card-body p-4">
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Nombre</label>
+                <input class="form-control" [(ngModel)]="nombre" placeholder="Tu nombre">
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label fw-semibold">Mensaje</label>
+                <textarea class="form-control" rows="5" [(ngModel)]="mensaje"
+                          placeholder="Contanos qué juego buscás"></textarea>
+              </div>
+
+              <button class="btn boton w-100" [disabled]="!formularioValido" (click)="enviar()">
+                Enviar mensaje
+              </button>
+
+            </div>
+          </div>
+        }
+
+      </div>
+    </div>
+  </div>
+</section>

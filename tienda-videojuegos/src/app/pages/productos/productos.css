@@ -1,0 +1,47 @@
+:host {
+    --violeta: #7c3aed;
+    --violeta-claro: #ede9fe;
+    --xbox-green: #107c10;
+    --ps-blue: #0070d1;
+    --nintendo-red: #e60012;
+}
+
+/* Base de los botones de filtro */
+.btn-filtro {
+    background-color: #ffffff;
+    color: #4b5563;
+    border: 2px solid #e5e7eb;
+    border-radius: 50rem;
+    padding: 0.55rem 1.25rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.btn-filtro:hover {
+    transform: translateY(-2px);
+}
+
+/* Colores cuando el filtro se activa */ 
+.btn-filtro-todas.active {
+    background-color: var(--violeta);
+    border-color: var(--violeta);
+    color: #ffffff;
+}
+
+.btn-filtro-xbox.active {
+    background-color: var(--xbox-green);
+    border-color: var(--xbox-green);
+    color: #ffffff;
+}
+
+.btn-filtro-playstation.active {
+    background-color: var(--ps-blue);
+    border-color: var(--ps-blue);
+    color: #ffffff;
+}
+
+.btn-filtro-nintendo.active {
+    background-color: var(--nintendo-red);
+    border-color: var(--nintendo-red);
+    color: #ffffff;
+}
